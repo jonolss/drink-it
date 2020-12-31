@@ -11,13 +11,23 @@ public class CocktailParser {
 
     private static ObjectMapper mapper = new ObjectMapper();
 
-    public static List<Cocktail> parseToListOfCocktails(String input) {
+    public static List<Cocktail> parseJsonToListOfCocktails(String input) {
         List<Cocktail> cocktails = null;
         try {
             cocktails = mapper.readValue(input, new TypeReference<List<Cocktail>>() {});
         } catch (JsonProcessingException e) {
-            System.out.println("Failed to process ingredients in IngredientParser");
+            System.out.println("Failed to process json to cocktails in CocktailParser");
         }
         return cocktails;
+    }
+
+    public static String parseListOfCocktailsToJson(List<Cocktail> input) {
+        String json = "";
+        try {
+            json = mapper.writeValueAsString(input);
+        } catch (JsonProcessingException e) {
+            System.out.println("Failed to process cocktails to json in CocktailParser");
+        }
+        return json;
     }
 }
