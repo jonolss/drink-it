@@ -1,7 +1,6 @@
 package se.slyntan.applications;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicOptionPaneUI;
 import java.util.HashMap;
 import java.util.Map;
 
