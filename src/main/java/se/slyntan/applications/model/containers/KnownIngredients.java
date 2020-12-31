@@ -20,6 +20,10 @@ public class KnownIngredients {
         }
     }
 
+    public static void resetLibrary() {
+        knownIngredients = new HashMap<>();
+    }
+
     public static void importLibrary(List<Ingredient> input) throws NullPointerException {
         input.forEach(KnownIngredients::addIngredient);
     }

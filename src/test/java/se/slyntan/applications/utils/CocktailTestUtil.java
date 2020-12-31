@@ -10,7 +10,7 @@ import java.util.List;
 public class CocktailTestUtil {
 
     public static List<Cocktail> createBaseListOfCocktails() {
-        return Arrays.asList(createDaiquiriCocktail(), createWhiskySourCocktail());
+        return Arrays.asList(createDaiquiriCocktail(), createWhiskySourCocktail(), createSidecarCocktail());
     }
 
     public static Cocktail createBasicCocktail() {
@@ -41,7 +41,7 @@ public class CocktailTestUtil {
 
     public static Cocktail createDaiquiriCocktail() {
         return new Cocktail.Builder()
-                .withName("whisky_sour")
+                .withName("daiquiri")
                 .withCocktailIngredient(new CocktailIngredient.Builder()
                         .withIngredient(new Ingredient("light_rum"))
                         .withAmount("2oz")
@@ -52,6 +52,24 @@ public class CocktailTestUtil {
                         .build())
                 .withCocktailIngredient(new CocktailIngredient.Builder()
                         .withIngredient(new Ingredient("demerara_simple_syrup"))
+                        .withAmount("0.75oz")
+                        .build())
+                .build();
+    }
+
+    public static Cocktail createSidecarCocktail() {
+        return new Cocktail.Builder()
+                .withName("sidecar")
+                .withCocktailIngredient(new CocktailIngredient.Builder()
+                        .withIngredient(new Ingredient("cognac"))
+                        .withAmount("1.5oz")
+                        .build())
+                .withCocktailIngredient(new CocktailIngredient.Builder()
+                        .withIngredient(new Ingredient("orange_liqueur"))
+                        .withAmount("0.75oz")
+                        .build())
+                .withCocktailIngredient(new CocktailIngredient.Builder()
+                        .withIngredient(new Ingredient("lemon"))
                         .withAmount("0.75oz")
                         .build())
                 .build();

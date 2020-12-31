@@ -54,6 +54,12 @@ public class Cocktail {
         this.cocktailIngredients = cocktailIngredients;
     }
 
+    public boolean evaluateSearchQuery(List<Ingredient> ingredients) {
+        return this.cocktailIngredients.stream()
+                .map(CocktailIngredient::getIngredient)
+                .anyMatch(x -> ingredients.contains(x));
+    }
+
     public static class Builder {
         private String name;
         private List<CocktailIngredient> cocktailIngredients;

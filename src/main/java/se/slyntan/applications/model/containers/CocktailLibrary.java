@@ -20,6 +20,10 @@ public class CocktailLibrary {
         }
     }
 
+    public static void resetLibrary() {
+        knownCocktails = new HashMap<>();
+    }
+
     public static void importLibrary(List<Cocktail> input) throws NullPointerException {
         input.forEach(CocktailLibrary::addCocktail);
     }
